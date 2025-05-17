@@ -1,0 +1,125 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as BlogStories from './Blog.stories';
+
+<Meta title="前端入门交互式教程/CSS基础/网页布局示例" of={BlogStories} />
+
+# 网页布局示例
+
+这个示例展示了一个完整的博客网站布局，包含了网页的所有主要区域。让我们来看看如何使用CSS来构建这样的布局：
+
+## 网页结构
+
+一个典型的网页通常包含以下几个主要区域：
+
+1. 头部区域（Header）
+   - 网站logo
+   - 导航菜单
+   - 用户操作区
+
+2. 主要内容区域（Main Content）
+   - 侧边栏（Sidebar）
+   - 内容区（Content）
+
+3. 底部区域（Footer）
+   - 网站信息
+   - 联系方式
+   - 社交媒体链接
+
+<Canvas of={BlogStories.Default} />
+
+## Flexbox布局的应用
+
+在这个示例中，我们大量使用了Flexbox布局来实现各种布局需求：
+
+### 1. 整体布局
+```css
+.blog-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+```
+- 使用`flex-direction: column`创建垂直方向的布局
+- 使用`min-height: 100vh`确保容器至少占满整个视口高度
+
+### 2. 头部导航
+```css
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+```
+- 使用`justify-content: space-between`实现logo、导航和用户操作区的两端对齐
+- 使用`align-items: center`实现垂直居中对齐
+
+### 3. 主要内容区域
+```css
+.main-content {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+}
+```
+- 使用`flex: 1`让主内容区域占据剩余空间
+- 使用`gap`属性设置侧边栏和内容区之间的间距
+
+### 4. 底部区域
+```css
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+```
+- 使用Flexbox实现底部三个区块的均匀分布
+
+## 响应式设计
+
+这个布局采用了响应式设计原则：
+
+1. 使用相对单位
+   - `rem`用于字体大小和间距
+   - `%`用于宽度
+   - `vh`用于视口高度
+
+2. 弹性布局
+   - 使用`flex: 1`实现自适应宽度
+   - 使用`flex-wrap: wrap`处理内容换行
+
+3. 最大宽度限制
+   - 使用`max-width`控制内容区域的最大宽度
+   - 使用`margin: 0 auto`实现居中对齐
+
+## 交互效果
+
+1. 导航链接
+```css
+.main-nav a {
+  transition: all 0.3s ease;
+}
+.main-nav a:hover {
+  color: #4a90e2;
+  background-color: #f5f5f5;
+}
+```
+
+2. 按钮效果
+```css
+.user-actions button {
+  transition: all 0.3s ease;
+}
+```
+
+3. 标签云
+```css
+.tag-cloud span {
+  transition: all 0.3s ease;
+}
+.tag-cloud span:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+```
+
+这个示例展示了如何将Flexbox布局应用到实际的网页开发中，创建出一个结构清晰、响应式的现代化网站布局。

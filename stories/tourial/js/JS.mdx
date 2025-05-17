@@ -1,0 +1,380 @@
+import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
+import * as JSStories from './JS.stories';
+
+<Meta title="前端入门交互式教程/JavaScript基础/基础语法" of={JSStories} />
+
+# JavaScript基础
+
+## 什么是JavaScript？
+
+> JavaScript是一种轻量级的解释型编程语言，主要用于网页开发。它可以让网页具有交互性，响应用户的操作，动态更新内容。JavaScript是前端开发的核心技术之一。
+
+### 1. 变量和数据类型
+
+JavaScript中的变量可以用来存储各种类型的数据。让我们来看看基本的数据类型：
+
+<Canvas of={JSStories.Variables} />
+<Controls of={JSStories.Variables} />
+
+主要的数据类型包括：
+- 字符串（String）：文本数据
+- 数字（Number）：整数和浮点数
+- 布尔值（Boolean）：true或false
+- 数组（Array）：有序的数据集合
+- 对象（Object）：键值对的集合
+
+变量声明方式：
+- `let`：声明可变变量
+- `const`：声明常量
+- `var`：旧式变量声明（不推荐使用）
+
+#### Window对象
+
+Window对象是浏览器窗口的全局对象，它代表浏览器窗口，是JavaScript的全局作用域。主要属性和方法：
+
+1. 全局变量管理
+   ```javascript
+   // 全局变量声明
+   window.globalVar = '全局变量';
+   
+   // 等效于
+   var globalVar = '全局变量';
+   
+   // 访问全局变量
+   console.log(window.globalVar); // '全局变量'
+   console.log(globalVar);        // '全局变量'
+   
+   // 检查全局变量是否存在
+   if (window.globalVar) {
+     console.log('全局变量存在');
+   }
+   ```
+
+2. 窗口属性
+   ```javascript
+   // 获取窗口尺寸
+   const width = window.innerWidth;
+   const height = window.innerHeight;
+   
+   // 获取滚动位置
+   const scrollX = window.scrollX;
+   const scrollY = window.scrollY;
+   ```
+
+3. 导航方法
+   ```javascript
+   // 页面跳转
+   window.location.href = 'https://example.com';
+   
+   // 刷新页面
+   window.location.reload();
+   
+   // 返回上一页
+   window.history.back();
+   ```
+
+4. 定时器
+   ```javascript
+   // 延迟执行
+   const timeoutId = window.setTimeout(() => {
+     console.log('3秒后执行');
+   }, 3000);
+   
+   // 定期执行
+   const intervalId = window.setInterval(() => {
+     console.log('每秒执行一次');
+   }, 1000);
+   
+   // 清除定时器
+   clearTimeout(timeoutId);
+   clearInterval(intervalId);
+   ```
+
+5. 对话框
+   ```javascript
+   // 警告框
+   window.alert('这是一个警告');
+   
+   // 确认框
+   const confirmed = window.confirm('确定要删除吗？');
+   
+   // 输入框
+   const name = window.prompt('请输入你的名字：');
+   ```
+
+### 2. 函数
+
+函数是JavaScript中的基本构建块，用于封装可重用的代码：
+
+<Canvas of={JSStories.Functions} />
+<Controls of={JSStories.Functions} />
+
+函数的基本概念：
+- 函数声明：使用`function`关键字
+- 箭头函数：使用`=>`语法
+- 参数：函数接收的输入值
+- 返回值：函数执行的结果
+
+### 3. DOM操作与元素交互
+
+DOM（文档对象模型）是JavaScript与网页交互的接口。通过DOM，我们可以：
+- 获取页面元素
+- 修改元素内容
+- 改变元素样式
+- 响应用户事件
+- 动态创建和删除元素
+
+#### 3.1 核心概念
+
+1. 获取元素
+   ```javascript
+   // 通过ID选择
+   const element = document.getElementById('myId');
+   
+   // 使用CSS选择器
+   const element = document.querySelector('.myClass');
+   const elements = document.querySelectorAll('.myClass');
+   ```
+
+2. 修改元素
+   ```javascript
+   // 修改内容
+   element.textContent = '新内容';
+   element.innerHTML = '<span>HTML内容</span>';
+   
+   // 修改样式
+   element.style.color = 'red';
+   element.className = 'new-class';
+   ```
+
+3. 事件处理
+   ```javascript
+   // 添加事件监听器
+   element.addEventListener('click', () => {
+     console.log('元素被点击了');
+   });
+   ```
+
+#### 3.2 交互式示例
+
+下面是一个完整的交互式示例，展示了如何动态管理元素：
+
+<Canvas of={JSStories.DOM} />
+<Controls of={JSStories.DOM} />
+
+示例代码：
+
+HTML结构：
+```html
+<div class="dom-demo">
+  <div class="button-group">
+    <button class="demo-button" id="addButton">添加元素</button>
+    <button class="demo-button" id="removeButton">删除元素</button>
+    <button class="demo-button" id="clearButton">清空所有</button>
+  </div>
+  <div class="element-container" id="container"></div>
+</div>
+```
+
+CSS样式：
+```css
+.dom-demo {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.button-group {
+  margin-bottom: 20px;
+}
+
+.demo-button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.demo-button:hover {
+  background-color: #357abd;
+}
+
+.element-container {
+  min-height: 100px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.dynamic-element {
+  padding: 10px;
+  margin: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+```
+
+JavaScript代码：
+```javascript
+// 获取DOM元素
+const addButton = document.getElementById('addButton');
+const removeButton = document.getElementById('removeButton');
+const clearButton = document.getElementById('clearButton');
+const container = document.getElementById('container');
+
+// 添加元素函数
+function addElement() {
+  const element = document.createElement('div');
+  element.className = 'dynamic-element';
+  element.textContent = `元素 ${container.children.length + 1}`;
+  container.appendChild(element);
+}
+
+// 删除元素函数
+function removeElement() {
+  if (container.children.length > 0) {
+    container.removeChild(container.lastChild);
+  }
+}
+
+// 清空元素函数
+function clearElements() {
+  container.innerHTML = '';
+}
+
+// 绑定事件监听器
+addButton.addEventListener('click', addElement);
+removeButton.addEventListener('click', removeElement);
+clearButton.addEventListener('click', clearElements);
+```
+
+这个示例展示了：
+1. 使用DOM API查找元素
+2. 事件监听器的绑定
+3. 元素的创建和删除
+4. 样式的分离管理
+
+#### 3.3 最佳实践
+
+1. 性能优化
+   - 缓存DOM查询结果
+   - 使用事件委托处理动态元素
+
+2. 代码组织
+   - 使用类名而不是内联样式
+   - 将样式定义集中在CSS中
+
+### 4. 动画效果
+
+JavaScript可以创建各种动画效果，让网页更加生动有趣：
+
+<Canvas of={JSStories.Animation} />
+<Controls of={JSStories.Animation} />
+
+动画实现的关键点：
+1. 使用CSS过渡（transition）实现平滑动画
+   ```javascript
+   element.style.transition = 'all 0.3s ease';
+   ```
+
+2. 使用transform属性实现变换
+   ```javascript
+   element.style.transform = 'rotate(45deg) scale(1.2)';
+   ```
+
+3. 使用事件监听器触发动画
+   ```javascript
+   element.addEventListener('mouseover', () => {
+     // 动画效果
+   });
+   ```
+
+### 5. 下拉菜单
+
+下拉菜单是网页中常见的交互组件。在这个示例中,我们展示了如何将样式和交互逻辑分离：
+
+<Canvas of={JSStories.Dropdown} />
+<Controls of={JSStories.Dropdown} />
+
+实现下拉菜单的关键点：
+1. CSS负责样式定义
+   ```css
+   .dropdown {
+     position: relative;
+     display: inline-block;
+   }
+   .dropdown-content {
+     display: none;
+     position: absolute;
+   }
+   .dropdown-content.show {
+     display: block;
+   }
+   ```
+
+2. JavaScript负责交互逻辑
+   ```javascript
+   // 显示/隐藏菜单
+   button.onclick = () => {
+     content.classList.toggle('show');
+   };
+
+   // 点击外部关闭
+   document.addEventListener('click', (e) => {
+     if (!dropdown.contains(e.target)) {
+       content.classList.remove('show');
+     }
+   });
+   ```
+
+### 6. 标签页
+
+标签页是组织内容的常用方式。同样,我们将样式和交互逻辑分离：
+
+<Canvas of={JSStories.Tabs} />
+<Controls of={JSStories.Tabs} />
+
+实现标签页的关键点：
+1. CSS定义样式和状态
+   ```css
+   .tab-button {
+     /* 基础样式 */
+   }
+   .tab-button.active {
+     /* 活动状态样式 */
+   }
+   .tab-content {
+     display: none;
+   }
+   .tab-content.active {
+     display: block;
+   }
+   ```
+
+2. JavaScript处理状态切换
+   ```javascript
+   button.onclick = () => {
+     // 更新按钮状态
+     buttons.forEach(btn => btn.classList.remove('active'));
+     button.classList.add('active');
+     
+     // 更新内容显示
+     contents.forEach(content => content.classList.remove('active'));
+     currentContent.classList.add('active');
+   };
+   ```
+
+### 小贴士
+
+- 使用CSS类名控制样式,而不是直接操作style属性
+- 使用classList API管理类名
+- 将样式定义集中在CSS中,便于维护和修改
+- JavaScript专注于处理交互逻辑和状态管理
+
+记住,好的代码组织应该遵循关注点分离原则。CSS负责样式,JavaScript负责交互,这样可以让代码更容易维护和扩展！ 

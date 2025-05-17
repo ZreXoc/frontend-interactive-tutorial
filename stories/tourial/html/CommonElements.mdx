@@ -1,0 +1,82 @@
+import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
+import * as CommonElementStories from './CommonElements.stories';
+
+<Meta title="前端入门交互式教程/HTML基础/常用元素" of={CommonElementStories} />
+
+# HTML常用元素
+
+除了基础元素外，HTML还提供了许多实用的元素，让我们来看看最常用的几种：
+
+## 列表元素
+
+列表元素用于展示一系列相关的项目。HTML提供了两种类型的列表：
+- 无序列表（ul）：使用项目符号标记
+- 有序列表（ol）：使用数字或字母标记
+
+<Canvas of={CommonElementStories.Lists} />
+<Controls of={CommonElementStories.Lists} />
+
+在这个阶段，你可以：
+- 选择列表类型（有序或无序）
+- 修改列表项内容
+- 自定义列表样式
+
+## 表格元素
+
+表格元素用于展示结构化的数据，比如成绩单、商品列表等。表格由行和列组成，可以包含表头和内容。
+
+<Canvas of={CommonElementStories.Tables} />
+<Controls of={CommonElementStories.Tables} />
+
+在这个阶段，你可以：
+- 修改表格头部
+- 编辑表格内容
+- 自定义表格样式
+
+## 表单元素
+
+表单是网页中用于收集用户输入的重要元素。HTML提供了多种表单元素类型，让我们来看看最常用的几种：
+
+### 文本输入
+- `text`：用于输入普通文本
+- `password`：用于输入密码（显示为圆点）
+- `email`：用于输入邮箱地址
+- `number`：用于输入数字
+
+### 选择输入
+- `select`：下拉选择框
+- `radio`：单选按钮
+- `checkbox`：复选框
+
+### 多行文本
+- `textarea`：用于输入多行文本
+
+### 提交按钮
+- `submit`：用于提交表单
+
+<Canvas of={CommonElementStories.Forms} />
+<Controls of={CommonElementStories.Forms} />
+
+你可以通过调整表单组配置来自定义表单：
+- 添加或删除表单元素
+- 修改标签文本
+- 更改占位符文本
+- 调整样式和布局
+
+表单元素是网页交互的重要组成部分，它们让用户能够与网站进行双向交流。在实际开发中，我们经常需要处理表单验证、数据提交等功能。
+
+## 多媒体元素
+
+多媒体元素用于展示图片、视频和音频内容。这些元素可以让网页更加生动有趣。
+
+<Canvas of={CommonElementStories.Media} />
+<Controls of={CommonElementStories.Media} />
+
+在这个阶段，你可以：
+- 选择媒体类型（图片、视频、音频）
+- 设置媒体源
+- 调整媒体大小
+- 控制播放行为（自动播放、循环播放等）
+- 自定义媒体样式
+
+记住，这些元素都是构建网页的基础，通过组合使用这些元素，你可以创建出丰富多彩的网页内容。多尝试、多练习，你会越来越熟悉它们的使用方法！

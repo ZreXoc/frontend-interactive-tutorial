@@ -1,0 +1,89 @@
+import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
+import * as ElementStories from './Element.stories';
+
+<Meta title="前端入门交互式教程/HTML基础/基础元素" of={ElementStories} />
+
+# HTML基础元素
+
+## 什么是HTML？
+
+> HTML（HyperText Markup Language，超文本标记语言）就像是我们用来写网页的"语言"。它通过不同的"标签"来组织网页内容，就像我们用不同的格式来写文章一样。HTML 可以很简单，也可以很复杂，这完全取决于你想要创建什么样的网页。
+
+### 1. 基础元素
+
+HTML文档是由一个个HTML元素组成的。每个HTML元素都有一个开始标签和一个结束标签，标签之间的内容就是我们要展示的内容。这就像我们写文章时，用不同的格式来组织文字一样。
+
+让我们来看看最基础的几个元素：
+
+<Canvas of={ElementStories.BasicElements} />
+<Controls of={ElementStories.BasicElements} />
+
+在这个阶段，你可以：
+- 选择不同的基础元素类型（p、h1、h2、h3）
+- 修改元素的内容
+- 观察不同元素的表现形式
+
+### 2. 块级元素和内联元素
+
+HTML元素可以分为两大类：块级元素和内联元素。这就像我们写文章时，有些内容会另起一行（块级），而有些内容会继续在同一行（内联）。
+
+#### 块级元素示例：
+
+<Canvas of={ElementStories.BlockElements} />
+<Controls of={ElementStories.BlockElements} />
+
+在这个阶段，你可以：
+- 选择不同的块级元素类型（div、p、h1、h2、h3）
+- 观察块级元素是如何占据整行空间的
+- 理解为什么有些内容会自动换行
+
+#### 内联元素示例：
+
+<Canvas of={ElementStories.InlineElements} />
+<Controls of={ElementStories.InlineElements} />
+
+在这个阶段，你可以：
+- 选择不同的内联元素类型（span、strong、em、a、i）
+- 观察内联元素是如何在同一行内显示的
+- 理解为什么有些内容会保持在同一行
+
+### 3. 元素嵌套
+
+HTML元素可以嵌套在其他元素中，就像俄罗斯套娃一样，一个元素可以包含其他元素。这种嵌套结构让我们可以创建更复杂的页面布局。
+
+<Canvas of={ElementStories.NestedElements} />
+<Controls of={ElementStories.NestedElements} />
+
+在这个阶段，你可以：
+- 选择外层块级元素类型（div、p、h1、h2、h3）
+- 设置外层元素的内容
+- 选择内层元素类型（span、strong、em、i）
+- 设置内层元素的内容
+- 观察元素是如何嵌套在一起的
+
+### 4. HTML属性
+
+HTML元素可以包含属性，这些属性就像是元素的"特性"或"设置"，它们可以改变元素的外观和行为。属性总是以"名称=值"的形式出现，比如：`name="value"`。
+
+一个元素可以有多个属性，但每种属性只能有一个。让我们来看看一些常用的属性：
+
+- `id`: 元素的唯一标识符，就像给元素起个名字
+- `class`: 元素的"类"，可以给多个元素设置相同的样式，就像给它们分个组
+- `style`: 元素的样式，用于控制元素的外观，就像给元素"化妆"
+
+<Canvas of={ElementStories.ElementWithAttributes} />
+<Controls of={ElementStories.ElementWithAttributes} />
+
+在这个阶段，你可以：
+- 选择元素类型
+- 设置元素内容
+- 添加id属性（给元素起个名字）
+- 添加class属性（给元素分个组）
+- 添加各种样式属性（给元素"化妆"）
+
+试试修改这些属性，观察它们如何影响元素的外观：
+- 修改id：每个元素都应该有自己独特的名字
+- 修改class：可以给多个元素设置相同的样式
+- 修改样式：可以改变元素的大小、颜色、边距等
+
+记住，学习HTML就像学习一门新的语言，需要多练习、多尝试。通过这个交互式教程，你可以直观地看到每个元素和属性的效果，这样学习起来会更容易理解！

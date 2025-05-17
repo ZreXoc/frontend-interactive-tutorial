@@ -1,0 +1,127 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as TodoStories from './Todo.stories';
+
+<Meta title="前端入门交互式教程/CSS基础/待办事项示例" of={TodoStories} />
+
+# 待办事项应用示例
+
+这个示例展示了一个现代化的待办事项（Todo List）应用界面。它不仅展示了CSS布局技巧，还为后续添加JavaScript交互功能做好了准备。
+
+## 界面结构
+
+这个待办事项应用包含以下主要部分：
+
+1. 头部区域
+   - 标题
+   - 任务统计（待完成/已完成）
+
+2. 输入区域
+   - 文本输入框
+   - 添加按钮
+
+3. 过滤区域
+   - 全部/待完成/已完成 过滤按钮
+
+4. 任务列表
+   - 任务项（包含复选框、文本、编辑和删除按钮）
+   - 已完成任务的样式变化
+
+<Canvas of={TodoStories.Default} />
+
+## Flexbox布局的应用
+
+在这个示例中，我们大量使用了Flexbox布局来实现各种布局需求：
+
+### 1. 整体布局
+```css
+.todo-app {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+```
+- 使用`max-width`限制最大宽度
+- 使用`margin: auto`实现水平居中
+
+### 2. 头部区域
+```css
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+```
+- 使用`justify-content: space-between`实现标题和统计的两端对齐
+- 使用`align-items: center`实现垂直居中对齐
+
+### 3. 输入区域
+```css
+.todo-input {
+  display: flex;
+  gap: 1rem;
+}
+```
+- 使用`flex`布局实现输入框和按钮的排列
+- 使用`gap`属性设置间距
+
+### 4. 任务列表
+```css
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+```
+- 使用`flex-direction: column`创建垂直列表
+- 使用`gap`属性设置任务项之间的间距
+
+## 交互效果
+
+这个示例包含了丰富的交互效果：
+
+1. 输入框焦点效果
+```css
+.todo-input input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+```
+
+2. 按钮悬停效果
+```css
+.add-btn:hover {
+  background-color: #2980b9;
+}
+```
+
+3. 任务项悬停效果
+```css
+.todo-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+```
+
+4. 操作按钮的显示/隐藏
+```css
+.todo-actions {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.todo-item:hover .todo-actions {
+  opacity: 1;
+}
+```
+
+## 后续JavaScript功能
+
+这个界面已经为添加JavaScript功能做好了准备，后续可以添加：
+
+1. 添加新任务
+2. 删除任务
+3. 编辑任务
+4. 标记任务完成/未完成
+5. 过滤任务列表
+6. 更新任务统计
+7. 数据持久化存储
+
+这个示例不仅展示了CSS布局技巧，还提供了一个很好的基础，可以继续添加JavaScript交互功能，使其成为一个完整的待办事项应用。 

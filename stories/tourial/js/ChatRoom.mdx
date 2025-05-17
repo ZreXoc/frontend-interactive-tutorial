@@ -1,0 +1,97 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import * as ChatRoomStories from './ChatRoom.stories';
+
+<Meta title="前端入门交互式教程/JavaScript基础/聊天室示例" of={ChatRoomStories} />
+
+# 聊天室示例
+
+这个聊天室示例展示了如何使用JavaScript实现一个简单的聊天功能。让我们来看看这个示例中使用的JavaScript特性：
+
+<Canvas of={ChatRoomStories.Default} />
+
+## DOM操作
+
+在这个示例中，我们使用了多种DOM操作方法：
+
+1. 创建元素
+```javascript
+const messageElement = document.createElement('div');
+messageElement.className = 'message sent';
+```
+
+2. 设置内容
+```javascript
+messageElement.innerHTML = `
+  <div class="message-content">
+    <div class="message-text">${message}</div>
+    <div class="message-time">${new Date().toLocaleTimeString()}</div>
+  </div>
+`;
+```
+
+3. 添加元素
+```javascript
+messagesContainer.appendChild(messageElement);
+```
+
+## 事件处理
+
+示例中包含了多种事件处理方式：
+
+1. 点击事件
+```javascript
+sendButton.onclick = sendMessage;
+```
+
+2. 键盘事件
+```javascript
+input.onkeypress = (e) => {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
+};
+```
+
+3. 输入事件
+```javascript
+input.oninput = () => {
+  sendButton.disabled = !input.value.trim();
+};
+```
+
+## 定时器
+
+使用setTimeout模拟消息回复：
+```javascript
+setTimeout(() => {
+  // 创建回复消息
+  const replyElement = document.createElement('div');
+  // ... 设置回复内容
+}, 1000);
+```
+
+## 交互功能
+
+1. 发送消息
+- 点击发送按钮
+- 按Enter键发送
+- 空消息验证
+
+2. 自动滚动
+```javascript
+messagesContainer.scrollTop = messagesContainer.scrollHeight;
+```
+
+3. 输入验证
+- 禁用空消息发送
+- 按钮状态更新
+
+## 小贴士
+
+- 使用事件委托处理动态添加的元素
+- 使用防抖/节流优化频繁操作
+- 考虑添加消息发送状态
+- 可以添加表情、图片等富文本功能
+- 考虑添加消息持久化存储
+
+这个示例展示了如何使用JavaScript实现基本的交互功能。通过这个交互式教程，你可以直观地看到JavaScript如何操作DOM、处理事件，以及实现用户交互。 
