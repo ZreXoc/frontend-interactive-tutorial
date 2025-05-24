@@ -51,7 +51,7 @@ export const Tables: Story = {
       ['是个东西就行', 'flash小游戏是前端', 'HR是前端', '后端也是前端'],
     ],
     className: 'custom-table',
-    style: 'border-collapse: collapse; width: 100%; text-align: center;',
+    style: 'border-collapse: collapse; width: 100%; text-align: center; border: 1px solid #ccc;',
   },
   argTypes: {
     headers: {

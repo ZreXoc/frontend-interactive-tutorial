@@ -83,6 +83,8 @@ export const createTable = ({ headers, rows, className, style }: TableProps): HT
   headers.forEach(header => {
     const th = document.createElement('th');
     th.textContent = header;
+    th.style.border = '1px solid #ccc';
+    th.style.padding = '8px';
     headerRow.appendChild(th);
   });
   thead.appendChild(headerRow);
@@ -95,6 +97,8 @@ export const createTable = ({ headers, rows, className, style }: TableProps): HT
     row.forEach(cell => {
       const td = document.createElement('td');
       td.textContent = cell;
+      td.style.border = '1px solid #ccc';
+      td.style.padding = '8px';
       tr.appendChild(td);
     });
     tbody.appendChild(tr);

@@ -41,12 +41,61 @@ import * as CSSStories from './CSS.stories';
 <Canvas of={CSSStories.BasicStyles} />
 <Controls of={CSSStories.BasicStyles} />
 
-- 调整文字颜色（color）
-- 设置背景颜色（background-color）
-- 改变字体大小（font-size）
-- 设置字体粗细（font-weight）
-- 添加文字装饰（text-decoration）
-- 调整文字对齐方式（text-align）
+#### 2.1 颜色相关属性
+
+```css
+/* 文字颜色 */
+color: #333333;  /* 使用十六进制颜色值 */
+color: rgb(51, 51, 51);  /* 使用RGB颜色值 */
+color: red;  /* 使用预定义的颜色名称 */
+
+/* 背景颜色 */
+background-color: #f0f0f0;  /* 浅灰色背景 */
+background-color: rgba(240, 240, 240, 0.5);  /* 半透明背景 */
+```
+
+样式示例：
+<div style="color: #333333; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是深灰色文字</div>
+<div style="color: red; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是红色文字</div>
+<div style="background-color: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是浅灰色背景</div>
+<div style="background-color: rgba(240, 240, 240, 0.5); padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是半透明背景</div>
+
+#### 2.2 尺寸相关属性
+
+```css
+/* 宽度和高度 */
+width: 200px;  /* 设置元素宽度 */
+height: 100px;  /* 设置元素高度 */
+min-width: 100px;  /* 最小宽度 */
+max-width: 500px;  /* 最大宽度 */
+
+/* 内边距和外边距 */
+padding: 10px;  /* 内边距 */
+margin: 20px;  /* 外边距 */
+```
+
+样式示例：
+<div style="width: 200px; height: 100px; background-color: #e0e0e0; margin: 10px 0; border: 1px solid #ccc;">固定尺寸元素</div>
+<div style="min-width: 100px; max-width: 500px; background-color: #e0e0e0; margin: 10px 0; border: 1px solid #ccc;">最小宽度100px，最大宽度500px</div>
+<div style="padding: 20px; background-color: #e0e0e0; margin: 10px 0; border: 1px solid #ccc;">内边距20px</div>
+<div style="margin: 20px; background-color: #e0e0e0; border: 1px solid #ccc;">外边距20px</div>
+
+#### 2.3 边框相关属性
+
+```css
+/* 边框样式 */
+border: 1px solid #ccc;  /* 边框宽度、样式、颜色 */
+border-radius: 4px;  /* 圆角边框 */
+border-width: 2px;  /* 边框宽度 */
+border-style: solid;  /* 边框样式：solid实线、dashed虚线、dotted点线 */
+border-color: #333;  /* 边框颜色 */
+```
+
+样式示例：
+<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">实线边框</div>
+<div style="border: 2px dashed #333; padding: 10px; margin: 10px 0;">虚线边框</div>
+<div style="border: 2px dotted #666; padding: 10px; margin: 10px 0;">点线边框</div>
+<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px 0;">圆角边框</div>
 
 ### 3. 文本样式
 
@@ -55,10 +104,90 @@ import * as CSSStories from './CSS.stories';
 <Canvas of={CSSStories.TextStyles} />
 <Controls of={CSSStories.TextStyles} />
 
-- 调整字体大小和颜色
-- 设置字体粗细
-- 添加下划线等装饰
-- 控制文本对齐方式
+#### 3.1 字体相关属性
+
+```css
+/* 字体大小和粗细 */
+font-size: 16px;  /* 字体大小 */
+font-weight: bold;  /* 字体粗细：normal正常、bold粗体、lighter细体 */
+font-family: Arial, sans-serif;  /* 字体族 */
+
+/* 字体样式 */
+font-style: italic;  /* 斜体 */
+line-height: 1.5;  /* 行高 */
+```
+
+样式示例：
+<div style="font-size: 16px; margin: 10px 0;">正常大小文字</div>
+<div style="font-size: 24px; margin: 10px 0;">大号文字</div>
+<div style="font-weight: bold; margin: 10px 0;">粗体文字</div>
+<div style="font-style: italic; margin: 10px 0;">斜体文字</div>
+<div style="line-height: 2; margin: 10px 0;">行高为2的文字<br/>第二行文字</div>
+
+#### 3.2 文本装饰属性
+
+```css
+/* 文本装饰 */
+text-decoration: underline;  /* 下划线 */
+text-decoration: line-through;  /* 删除线 */
+text-decoration: overline;  /* 上划线 */
+text-decoration: none;  /* 无装饰 */
+```
+
+样式示例：
+<div style="text-decoration: underline; margin: 10px 0;">下划线文字</div>
+<div style="text-decoration: line-through; margin: 10px 0;">删除线文字</div>
+<div style="text-decoration: overline; margin: 10px 0;">上划线文字</div>
+
+#### 3.3 文本对齐属性
+
+```css
+/* 文本对齐 */
+text-align: left;  /* 左对齐 */
+text-align: center;  /* 居中对齐 */
+text-align: right;  /* 右对齐 */
+text-align: justify;  /* 两端对齐 */
+```
+
+样式示例：
+<div style="text-align: left; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">左对齐文本</div>
+<div style="text-align: center; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">居中对齐文本</div>
+<div style="text-align: right; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">右对齐文本</div>
+<div style="text-align: justify; border: 1px solid #ccc; padding: 10px; margin: 10px 0; width: 300px;">两端对齐文本，这是一段较长的文本，用于展示两端对齐的效果。这是一段较长的文本，用于展示两端对齐的效果。</div>
+
+#### 3.4 文本间距属性
+
+```css
+/* 文本间距 */
+letter-spacing: 2px;  /* 字母间距 */
+word-spacing: 5px;  /* 单词间距 */
+text-indent: 20px;  /* 首行缩进 */
+```
+
+样式示例：
+<div style="letter-spacing: 2px; margin: 10px 0;">字母间距加大的文本</div>
+<div style="word-spacing: 5px; margin: 10px 0;">单词 间距 加大的 文本</div>
+<div style="text-indent: 20px; margin: 10px 0;">这是一段有首行缩进的文本。这是一段有首行缩进的文本。这是一段有首行缩进的文本。</div>
+
+这些属性可以组合使用，创造出丰富多样的文本样式效果。例如：
+
+```css
+.text-example {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 4px;
+}
+```
+
+样式示例：
+<div style="color: #333; font-size: 18px; font-weight: bold; text-align: center; line-height: 1.6; letter-spacing: 1px; text-decoration: underline; background-color: #f5f5f5; padding: 15px; border-radius: 4px; margin: 10px 0;">组合样式示例文本</div>
 
 ### 4. CSS选择器
 
@@ -71,12 +200,12 @@ CSS选择器就像是我们的"定位器"，帮助我们找到想要美化的HTM
   <div class="header">
     <h1 class="title">标题</h1>
     <p class="subtitle">副标题</p>
-  </div>
+    </div>
   <div class="content">
     <p>第一段文本</p>
     <p class="highlight">高亮文本</p>
     <p>第三段文本</p>
-  </div>
+    </div>
   <div class="footer">
     <span>页脚信息</span>
   </div>
@@ -147,11 +276,11 @@ p {
 - ID选择器（#id）：选择具有特定ID的元素，如 `#container`
 - 类选择器（.class）：选择具有特定类名的元素，如 `.header`
 - 元素选择器（element）：选择特定类型的元素，如 `p`
-- 通配符选择器（*）：选择所有元素
-- 后代选择器（div span）：选择div内的所有span元素
-- 子元素选择器（div > span）：选择div的直接子元素span
-- 相邻兄弟选择器（div + span）：选择紧跟在div后面的span元素
-- 通用兄弟选择器（div ~ span）：选择div后面的所有span元素
+  - 通配符选择器（*）：选择所有元素
+  - 后代选择器（div span）：选择div内的所有span元素
+  - 子元素选择器（div > span）：选择div的直接子元素span
+  - 相邻兄弟选择器（div + span）：选择紧跟在div后面的span元素
+  - 通用兄弟选择器（div ~ span）：选择div后面的所有span元素
 
 ### 5. 伪类选择器
 
