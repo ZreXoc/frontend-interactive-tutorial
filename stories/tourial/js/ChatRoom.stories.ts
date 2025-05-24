@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/html';
 import { createChatRoomElement } from './ChatRoom';
 
 const meta = {
-  title: '前端入门交互式教程/JavaScript基础/聊天室示例',
+  title: '前端入门交互式教程/03.JavaScript基础/02.聊天室交互',
   render: () => createChatRoomElement(),
 } satisfies Meta;
 

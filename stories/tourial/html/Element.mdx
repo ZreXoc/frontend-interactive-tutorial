@@ -1,7 +1,7 @@
 import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
 import * as ElementStories from './Element.stories';
 
-<Meta title="前端入门交互式教程/HTML基础/基础元素" of={ElementStories} />
+<Meta title="前端入门交互式教程/01.HTML基础/01.HTML元素" of={ElementStories} />
 
 # HTML基础元素
 
@@ -29,6 +29,9 @@ HTML元素可以分为两大类：块级元素和内联元素。这就像我们�
 
 #### 块级元素示例：
 
+块级元素在页面中以块的形式展现。一个块级元素出现在它前面的内容之后的新行上。
+一个块就是一个段落
+
 <Canvas of={ElementStories.BlockElements} />
 <Controls of={ElementStories.BlockElements} />
 
@@ -39,8 +42,21 @@ HTML元素可以分为两大类：块级元素和内联元素。这就像我们�
 
 #### 内联元素示例：
 
+内联元素通常出现在块级元素中并环绕文档内容的一小部分，而不是一整个段落或者一组内容。
+
 <Canvas of={ElementStories.InlineElements} />
 <Controls of={ElementStories.InlineElements} />
+
+<span>span</span>
+<strong>strong</strong>
+<em>em</em>
+<i>i</i>
+```html
+<span>span</span>
+<strong>strong</strong>
+<em>em</em>
+<i>i</i>
+```
 
 在这个阶段，你可以：
 - 选择不同的内联元素类型（span、strong、em、a、i）
@@ -67,9 +83,28 @@ HTML元素可以包含属性，这些属性就像是元素的"特性"或"设置"
 
 一个元素可以有多个属性，但每种属性只能有一个。让我们来看看一些常用的属性：
 
-- `id`: 元素的唯一标识符，就像给元素起个名字
-- `class`: 元素的"类"，可以给多个元素设置相同的样式，就像给它们分个组
-- `style`: 元素的样式，用于控制元素的外观，就像给元素"化妆"
+- `id`: 元素的唯一标识符，给元素起名
+- `class`: 元素的"类"，可以给多个元素设置相同的样式，将元素分组
+- `style`: 元素的样式，用于控制元素的外观
+- `href`: 元素的链接，用于设置元素的链接
+
+让我们来看一个具体的例子，使用 `<a>` 标签和 `href` 属性创建一个链接：
+
+```html
+<a href="https://www.example.com">点击这里访问示例网站</a>
+```
+<a href="https://hitsz.edu.cn">点击这里访问示例网站</a>
+
+在这个例子中：
+- `<a>` 标签用于创建一个链接
+- `href` 属性指定了链接的目标地址
+- 标签之间的文本是链接的显示内容
+
+你还可以使用 `href` 属性创建不同类型的链接：
+- 外部网站链接：`href="https://www.example.com"`
+- 内部页面链接：`href="about.html"`
+- 邮件链接：`href="mailto:example@example.com"`
+- 电话链接：`href="tel:+1234567890"`
 
 <Canvas of={ElementStories.ElementWithAttributes} />
 <Controls of={ElementStories.ElementWithAttributes} />
@@ -87,3 +122,60 @@ HTML元素可以包含属性，这些属性就像是元素的"特性"或"设置"
 - 修改样式：可以改变元素的大小、颜色、边距等
 
 记住，学习HTML就像学习一门新的语言，需要多练习、多尝试。通过这个交互式教程，你可以直观地看到每个元素和属性的效果，这样学习起来会更容易理解！
+
+### 5. Meta元素
+
+Meta元素用于提供关于HTML文档的元数据（metadata）。这些信息不会显示在页面上，但对于浏览器和搜索引擎来说非常重要。让我们来看一个完整的HTML文件结构：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 设置文档的字符编码 -->
+    <meta charset="UTF-8">
+    
+    <!-- 设置视口，用于响应式设计 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 设置网页描述 -->
+    <meta name="description" content="这是一个HTML教程页面">
+    
+    <!-- 设置网页关键词 -->
+    <meta name="keywords" content="HTML, 教程, 前端">
+    
+    <!-- 设置网页作者 -->
+    <meta name="author" content="你的名字">
+    
+    <!-- 设置网页标题 -->
+    <title>HTML教程</title>
+</head>
+<body>
+    <!-- 页面内容 -->
+    <h1>欢迎来到HTML教程</h1>
+    <p>这是一个段落。</p>
+    <a href="https://hitsz.edu.cn">点击这里访问示例网站</a>
+</body>
+</html>
+```
+
+在这个完整的HTML文件中：
+
+1. `<!DOCTYPE html>` 声明这是一个HTML5文档
+2. `<html>` 是文档的根元素
+3. `<head>` 部分包含：
+   - `<meta charset="UTF-8">` 设置字符编码
+   - `<meta name="viewport">` 设置移动设备视口
+   - `<meta name="description">` 设置页面描述
+   - `<meta name="keywords">` 设置关键词
+   - `<meta name="author">` 设置作者信息
+   - `<title>` 设置页面标题
+4. `<body>` 部分包含实际显示的内容
+
+这些meta元素的作用：
+- `charset`：确保网页正确显示中文等特殊字符
+- `viewport`：使网页在移动设备上正确显示
+- `description`：在搜索引擎结果中显示页面描述
+- `keywords`：帮助搜索引擎理解页面主题
+- `author`：标明页面作者信息
+
+记住，一个良好的HTML文档结构对于网页的可访问性和搜索引擎优化（SEO）非常重要。

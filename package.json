@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_a0bb60a5c642cf0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-google-analytics": "^6.2.9",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
     "@storybook/builder-vite": "^8.6.14",
@@ -20,8 +22,8 @@
     "@storybook/html-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@whitespace/storybook-addon-html": "^6.1.1",
+    "chromatic": "^11.28.2",
     "storybook": "^8.6.12",
     "vite": "^6.3.5"
-  },
-  "dependencies": {}
+  }
 }

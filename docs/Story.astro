@@ -1,0 +1,35 @@
+---
+interface Props {
+  src?: string;
+  path: string;
+  width?: string;
+  height?: string;
+  shortcuts?: boolean;
+  singleStory?: boolean;
+}
+
+const {
+  src = "https://interactive.zrex.top/",
+  path,
+  width = "100%",
+  height,
+  shortcuts = false,
+  singleStory = true
+} = Astro.props;
+
+// 构建查询参数
+const queryParams = new URLSearchParams({
+  path,
+  shortcuts: shortcuts.toString(),
+  singleStory: singleStory.toString()
+});
+const fullSrc = `${src}?${queryParams.toString()}`;
+---
+
+<iframe
+  src={fullSrc}
+  width={width}
+  height={height}
+  allow={"fullscreen"}
+  sandbox={"allow-modals allow-popups allow-scripts allow-forms allow-same-origin"}
+/>

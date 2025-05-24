@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/html';
-import { createList, createTable, createForm, createMedia } from './CommonElements';
-import type { ListProps, TableProps, FormProps, MediaProps } from './CommonElements';
+import { createList, createTable, createForm, createMedia, createBlockquote, createCode } from './CommonElements';
+import type { ListProps, TableProps, FormProps, MediaProps, BlockquoteProps, CodeProps } from './CommonElements';
 
 const meta = {
-  title: '前端入门交互式教程/HTML基础/常用元素',
+  title: '前端入门交互式教程/01.HTML基础/02.常用元素',
+  render: () => createCommonElements(),
 } satisfies Meta;
 
 export default meta;
@@ -165,8 +166,9 @@ export const Forms: Story = {
 export const Media: Story = {
   render: (args) => createMedia(args as MediaProps),
   args: {
-    type: 'img',
-    src: 'https://picsum.photos/200/300',
+    type: 'video',
+    src: 'https://daisu.ke/daisuke-short.mp4',
+    controls: true,
     alt: '示例图片',
     width: 200,
     height: 300,
@@ -214,6 +216,69 @@ export const Media: Story = {
     style: {
       control: 'text',
       description: '多媒体元素的样式',
+    },
+  },
+};
+
+// 引用块元素示例
+export const Blockquotes: Story = {
+  render: (args) => createBlockquote(args as BlockquoteProps),
+  args: {
+    content: '这是一段引用文本，通常用于引用他人的话或内容。',
+    cite: 'https://example.com',
+    className: 'custom-blockquote',
+    style: 'border-left: 4px solid #ccc; padding-left: 20px; margin: 20px 0; font-style: italic;',
+  },
+  argTypes: {
+    content: {
+      control: 'text',
+      description: '引用内容',
+    },
+    cite: {
+      control: 'text',
+      description: '引用来源URL',
+    },
+    className: {
+      control: 'text',
+      description: '引用块的类名',
+    },
+    style: {
+      control: 'text',
+      description: '引用块的样式',
+    },
+  },
+};
+
+// 代码元素示例
+export const Codes: Story = {
+  render: (args) => createCode(args as CodeProps),
+  args: {
+    content: 'const greeting = "Hello, World!";\nconsole.log(greeting);',
+    isPre: true,
+    language: 'javascript',
+    className: 'custom-code',
+    style: 'background-color: #f5f5f5; padding: 15px; border-radius: 4px; font-family: monospace;',
+  },
+  argTypes: {
+    content: {
+      control: 'text',
+      description: '代码内容',
+    },
+    isPre: {
+      control: 'boolean',
+      description: '是否使用pre标签包裹',
+    },
+    language: {
+      control: 'text',
+      description: '代码语言（用于语法高亮）',
+    },
+    className: {
+      control: 'text',
+      description: '代码元素的类名',
+    },
+    style: {
+      control: 'text',
+      description: '代码元素的样式',
     },
   },
 };

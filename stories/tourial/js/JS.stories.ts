@@ -3,7 +3,7 @@ import { createDOMDemoElement } from './JS';
 
 type Story = StoryObj;
 export default {
-  title: '前端入门交互式教程/JavaScript基础/基础语法',
+  title: '前端入门交互式教程/03.JavaScript基础/01.JavaScript基础',
 } satisfies Meta;
 
 // 变量和数据类型示例

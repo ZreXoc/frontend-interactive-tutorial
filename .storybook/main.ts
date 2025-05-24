@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@whitespace/storybook-addon-html",
     "@storybook/addon-interactions",
+    "@storybook/addon-google-analytics",
   ],
   framework: {
     name: "@storybook/html-vite",

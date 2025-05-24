@@ -1,0 +1,114 @@
+---
+title: 前端交互式教程-HTML基础
+category: technique
+tags:
+  - frontend
+  - html
+summary: HTML基础, 包括基础元素的介绍等
+description: 这篇文章是为了给哈工深同学们做一个讲座而准备的, 一共有三节, 这是第一节, 介绍了HTML的基础知识。
+preview: src/assets/images/HIT-logo.svg
+---
+
+import { Image } from 'astro:assets';
+import Story from './Story.astro';
+import fullscreenPCImg from './fullscreen-pc.png';
+import fullscreenMobileImg from './fullscreen-mobile.png';
+
+该教程为交互式教程, 可以通过以下方式打开控件(`Control`), 修改参数,
+预览效果。点击`HTML`可以看到源代码
+<Image src={fullscreenPCImg} alt="电脑端点击右上角叉打开控制台" />
+<Image src={fullscreenMobileImg} alt="手机端点击右下角按钮打开控制台" />
+
+
+
+# HTML基础
+
+## 什么是HTML？
+
+> HTML（HyperText Markup Language，超文本标记语言）就像是我们用来写网页的"语言"。它通过不同的"标签"来组织网页内容，就像我们用不同的格式来写文章一样。HTML 可以很简单，也可以很复杂，这完全取决于你想要创建什么样的网页。
+
+### 基础元素
+
+HTML文档是由一个个HTML元素组成的。每个HTML元素都有一个开始标签和一个结束标签，标签之间的内容就是我们要展示的内容。这就像我们写文章时，用不同的格式来组织文字一样。
+
+让我们来看看最基础的几个元素：
+
+<Story
+  path="/story/前端入门交互式教程-html基础-基础元素--basic-elements"
+/>
+
+### 块级元素和内联元素
+
+HTML元素可以分为两大类：块级元素和内联元素。这就像我们写文章时，有些内容会另起一行（块级），而有些内容会继续在同一行（内联）。
+
+#### 块级元素示例：
+
+<Story
+  path="/story/前端入门交互式教程-html基础-基础元素--block-elements"
+  height="400px"
+/>
+
+#### 内联元素示例：
+
+<Story
+  path="/story/前端入门交互式教程-html基础-基础元素--inline-elements"
+  height="400px"
+/>
+
+### 元素嵌套
+
+HTML元素可以嵌套在其他元素中，就像俄罗斯套娃一样，一个元素可以包含其他元素。这种嵌套结构让我们可以创建更复杂的页面布局。
+
+<Story
+  path="/story/前端入门交互式教程-html基础-基础元素--nested-elements"
+  height="400px"
+/>
+
+### HTML属性
+
+HTML元素可以包含属性，这些属性就像是元素的"特性"或"设置"，它们可以改变元素的外观和行为。属性总是以"名称=值"的形式出现，比如：`name="value"`。
+
+<Story
+  path="/story/前端入门交互式教程-html基础-基础元素--element-with-attributes"
+/>
+
+## 常用元素
+
+### 列表元素
+
+列表元素用于展示一系列相关的项目。HTML提供了两种类型的列表：
+- 无序列表（ul）：使用项目符号标记
+- 有序列表（ol）：使用数字或字母标记
+
+<Story
+  path="/story/前端入门交互式教程-html基础-常用元素--lists"
+/>
+
+### 表格元素
+
+表格元素用于展示结构化的数据，比如成绩单、商品列表等。表格由行和列组成，可以包含表头和内容。
+
+<Story
+  path="/story/前端入门交互式教程-html基础-常用元素--tables"
+/>
+
+### 表单元素
+
+表单是网页中用于收集用户输入的重要元素。HTML提供了多种表单元素类型，让我们来看看最常用的几种：
+
+<Story
+  path="/story/前端入门交互式教程-html基础-常用元素--forms"
+/>
+
+### 多媒体元素
+
+多媒体元素用于展示图片、视频和音频内容。这些元素可以让网页更加生动有趣。
+
+<Story
+  path="/story/前端入门交互式教程-html基础-常用元素--media"
+/>
+
+## 相关教程
+
+- [CSS基础教程](/docs/css) - 第二节：学习CSS的基础知识
+- [JavaScript基础教程](/docs/js) - 第三节：学习JavaScript的基础知识

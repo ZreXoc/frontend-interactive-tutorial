@@ -1,7 +1,7 @@
 import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
-import * as CommonElementStories from './CommonElements.stories';
+import * as CommonElementsStories from './CommonElements.stories';
 
-<Meta title="前端入门交互式教程/HTML基础/常用元素" of={CommonElementStories} />
+<Meta title="前端入门交互式教程/01.HTML基础/02.常用元素" of={CommonElementsStories} />
 
 # HTML常用元素
 
@@ -13,8 +13,8 @@ import * as CommonElementStories from './CommonElements.stories';
 - 无序列表（ul）：使用项目符号标记
 - 有序列表（ol）：使用数字或字母标记
 
-<Canvas of={CommonElementStories.Lists} />
-<Controls of={CommonElementStories.Lists} />
+<Canvas of={CommonElementsStories.Lists} />
+<Controls of={CommonElementsStories.Lists} />
 
 在这个阶段，你可以：
 - 选择列表类型（有序或无序）
@@ -25,8 +25,8 @@ import * as CommonElementStories from './CommonElements.stories';
 
 表格元素用于展示结构化的数据，比如成绩单、商品列表等。表格由行和列组成，可以包含表头和内容。
 
-<Canvas of={CommonElementStories.Tables} />
-<Controls of={CommonElementStories.Tables} />
+<Canvas of={CommonElementsStories.Tables} />
+<Controls of={CommonElementsStories.Tables} />
 
 在这个阶段，你可以：
 - 修改表格头部
@@ -54,8 +54,8 @@ import * as CommonElementStories from './CommonElements.stories';
 ### 提交按钮
 - `submit`：用于提交表单
 
-<Canvas of={CommonElementStories.Forms} />
-<Controls of={CommonElementStories.Forms} />
+<Canvas of={CommonElementsStories.Forms} />
+<Controls of={CommonElementsStories.Forms} />
 
 你可以通过调整表单组配置来自定义表单：
 - 添加或删除表单元素
@@ -69,8 +69,8 @@ import * as CommonElementStories from './CommonElements.stories';
 
 多媒体元素用于展示图片、视频和音频内容。这些元素可以让网页更加生动有趣。
 
-<Canvas of={CommonElementStories.Media} />
-<Controls of={CommonElementStories.Media} />
+<Canvas of={CommonElementsStories.Media} />
+<Controls of={CommonElementsStories.Media} />
 
 在这个阶段，你可以：
 - 选择媒体类型（图片、视频、音频）
@@ -80,3 +80,30 @@ import * as CommonElementStories from './CommonElements.stories';
 - 自定义媒体样式
 
 记住，这些元素都是构建网页的基础，通过组合使用这些元素，你可以创建出丰富多彩的网页内容。多尝试、多练习，你会越来越熟悉它们的使用方法！
+
+## 引用块元素
+
+引用块元素用于引用他人的话或内容。它通常以缩进和斜体的形式显示，可以包含引用来源。
+
+<Canvas of={CommonElementsStories.Blockquotes} />
+<Controls of={CommonElementsStories.Blockquotes} />
+
+在这个阶段，你可以：
+- 修改引用内容
+- 添加引用来源
+- 自定义引用样式
+
+## 代码元素
+
+代码元素用于展示代码片段。HTML提供了两种代码元素：
+- `code`：用于行内代码
+- `pre`：用于预格式化文本，通常与`code`配合使用来展示代码块
+
+<Canvas of={CommonElementsStories.Codes} />
+<Controls of={CommonElementsStories.Codes} />
+
+在这个阶段，你可以：
+- 编辑代码内容
+- 选择是否使用`pre`标签
+- 指定代码语言（用于语法高亮）
+- 自定义代码样式

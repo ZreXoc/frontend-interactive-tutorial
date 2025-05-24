@@ -1,12 +1,11 @@
 import type { StoryObj, Meta } from '@storybook/html';
 import { createCSSElement } from './CSS';
-import type { CSSProps } from './CSS';
 import { createFlexElement } from './CSS';
 import { createGridElement } from './CSS';
 
 type Story = StoryObj;
 export default {
-  title: '前端入门交互式教程/CSS基础/样式与选择器',
+  title: '前端入门交互式教程/02.CSS基础/01.CSS基础',
 } satisfies Meta;
 
 // DOM结构示例
@@ -478,27 +477,66 @@ export const PseudoClasses: Story = {
 
 // 盒模型示例
 export const BoxModel: Story = {
-  render: (args) => createCSSElement(args as CSSProps),
+  render: (args) => {
+    const container = document.createElement('div');
+    container.style.padding = '20px';
+    container.style.border = '1px solid #eee';
+    container.style.margin = '10px';
+    container.style.borderRadius = '4px';
+
+    // 创建CSS代码展示区域
+    const codeContainer = document.createElement('pre');
+    codeContainer.style.backgroundColor = '#f5f5f5';
+    codeContainer.style.padding = '10px';
+    codeContainer.style.borderRadius = '4px';
+    codeContainer.style.marginBottom = '10px';
+    codeContainer.style.overflow = 'auto';
+
+    // 生成CSS代码
+    const cssCode = `#box-model {
+  width: ${args.width}px;
+  height: ${args.height}px;
+  padding: ${args.padding}px;
+  margin: ${args.margin}px;
+  border: ${args.border};
+  background-color: ${args.backgroundColor};
+}`;
+
+    codeContainer.textContent = cssCode;
+    container.appendChild(codeContainer);
+
+    // 创建style标签
+    const styleElement = document.createElement('style');
+    styleElement.textContent = cssCode;
+    container.appendChild(styleElement);
+
+    // 创建示例元素
+    const boxModelElement = document.createElement('div');
+    boxModelElement.id = 'box-model';
+    boxModelElement.textContent = args.content || '盒模型示例';
+    container.appendChild(boxModelElement);
+
+    return container;
+  },
   args: {
-    id: 'box-model',
-    selector: 'class',
-    selectorName: 'box-model',
     content: '盒模型示例',
-    styles: {
-      width: 200,
-      height: 100,
-      padding: 20,
-      margin: 20,
-      border: '2px solid #333',
-      backgroundColor: '#f0f0f0',
-    },
+    width: 200,
+    height: 100,
+    padding: 20,
+    margin: 20,
+    border: '2px solid #333',
+    backgroundColor: '#f0f0f0',
   },
   parameters: {
     controls: {
-      include: ['width', 'height', 'padding', 'margin', 'border'],
+      include: ['width', 'height', 'padding', 'margin', 'border', 'backgroundColor'],
     },
   },
   argTypes: {
+    content: {
+      control: 'text',
+      description: '元素内容',
+    },
     width: {
       control: { type: 'range', min: 100, max: 500, step: 10 },
       description: '内容区域宽度',
@@ -518,6 +556,10 @@ export const BoxModel: Story = {
     border: {
       control: 'text',
       description: '边框样式',
+    },
+    backgroundColor: {
+      control: 'color',
+      description: '背景颜色',
     },
   },
 };
@@ -547,7 +589,7 @@ export const Layout: Story = {
     alignItems: 'stretch',
     flexWrap: 'wrap',
     gap: '10px',
-    width: 500,
+    width: 550,
     height: 200,
     backgroundColor: '#f0f0f0',
     padding: 20,
@@ -686,28 +728,97 @@ export const Grid: Story = {
 
 // 定位示例
 export const Positioning: Story = {
-  render: (args) => createCSSElement({
-    id: 'positioning',
-    content: args.content,
-    styles: {
-      position: args.position,
-      top: args.top,
-      left: args.left,
-      width: args.width,
-      height: args.height,
-      backgroundColor: args.backgroundColor,
-      border: args.border,
-    },
-  }),
+  render: (args) => {
+    const container = document.createElement('div');
+    container.style.padding = '20px';
+    container.style.border = '1px solid #eee';
+    container.style.margin = '10px';
+    container.style.borderRadius = '4px';
+    container.style.position = 'relative';
+    container.style.minHeight = '400px';
+
+    // 创建CSS代码展示区域
+    const codeContainer = document.createElement('pre');
+    codeContainer.style.backgroundColor = '#f5f5f5';
+    codeContainer.style.padding = '10px';
+    codeContainer.style.borderRadius = '4px';
+    codeContainer.style.marginBottom = '10px';
+    codeContainer.style.overflow = 'auto';
+
+    // 生成CSS代码
+    const cssCode = `#positioning-demo {
+  position: ${args.position};
+  top: ${args.top}px;
+  left: ${args.left}px;
+  width: ${args.width}px;
+  height: ${args.height}px;
+  background-color: ${args.backgroundColor};
+  border: ${args.border};
+  z-index: ${args.position === 'fixed' ? '1000' : '1'};
+}`;
+
+    codeContainer.textContent = cssCode;
+    container.appendChild(codeContainer);
+
+    // 创建style标签
+    const styleElement = document.createElement('style');
+    styleElement.textContent = cssCode;
+    container.appendChild(styleElement);
+
+    // 创建参考元素
+    const referenceElement = document.createElement('div');
+    referenceElement.style.width = '200px';
+    referenceElement.style.height = '100px';
+    referenceElement.style.backgroundColor = '#e0e0e0';
+    referenceElement.style.margin = '20px';
+    referenceElement.style.padding = '10px';
+    referenceElement.style.border = '1px solid #999';
+    referenceElement.textContent = '参考元素';
+
+    // 创建定位元素
+    const positioningElement = document.createElement('div');
+    positioningElement.id = 'positioning-demo';
+    positioningElement.textContent = args.content || '定位元素';
+    container.appendChild(positioningElement);
+    container.appendChild(referenceElement);
+
+    // 创建说明文本
+    const explanation = document.createElement('div');
+    explanation.style.marginTop = '20px';
+    explanation.style.padding = '10px';
+    explanation.style.backgroundColor = '#f8f9fa';
+    explanation.style.borderRadius = '4px';
+    
+    let explanationText = '';
+    switch (args.position) {
+      case 'static':
+        explanationText = 'static（静态定位）：元素按照正常文档流定位，top/left等属性无效';
+        break;
+      case 'relative':
+        explanationText = 'relative（相对定位）：元素相对于其正常位置进行定位，不会脱离文档流';
+        break;
+      case 'absolute':
+        explanationText = 'absolute（绝对定位）：元素相对于最近的定位祖先元素进行定位，会脱离文档流';
+        break;
+      case 'fixed':
+        explanationText = 'fixed（固定定位）：元素相对于视口进行定位，会脱离文档流，滚动时保持位置不变';
+        break;
+    }
+    
+    explanation.textContent = explanationText;
+    container.appendChild(explanation);
+
+    return container;
+  },
   args: {
-    content: '定位示例',
+    content: '定位元素',
     position: 'relative',
     top: 20,
     left: 20,
     width: 200,
     height: 100,
-    backgroundColor: '#f0f0f0',
-    border: '1px solid #333',
+    backgroundColor: '#4a90e2',
+    border: '2px solid #2c3e50',
   },
   parameters: {
     controls: {
@@ -718,6 +829,8 @@ export const Positioning: Story = {
         'left',
         'width',
         'height',
+        'backgroundColor',
+        'border',
       ],
     },
   },
@@ -746,6 +859,14 @@ export const Positioning: Story = {
     height: {
       control: { type: 'range', min: 50, max: 300, step: 10 },
       description: '高度',
+    },
+    backgroundColor: {
+      control: 'color',
+      description: '背景颜色',
+    },
+    border: {
+      control: 'text',
+      description: '边框样式',
     },
   },
 };

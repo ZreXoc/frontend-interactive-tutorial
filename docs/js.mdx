@@ -1,7 +1,23 @@
-import { Meta, Canvas, Controls, Story } from '@storybook/blocks';
-import * as JSStories from './JS.stories';
+---
+title: 前端交互式教程-JavaScript基础
+category: technique
+tags:
+  - frontend
+  - javascript
+summary: JavaScript基础, 包括基础语法和实战案例的介绍等
+description: 这篇文章是为了给哈工深同学们做一个讲座而准备的, 一共有三节, 这是第三节, 介绍了JavaScript的基础知识。
+preview: src/assets/images/HIT-logo.svg
+---
 
-<Meta title="前端入门交互式教程/03.JavaScript基础/01.JavaScript基础" of={JSStories} />
+import { Image } from 'astro:assets';
+import Story from './Story.astro';
+import fullscreenPCImg from './fullscreen-pc.png';
+import fullscreenMobileImg from './fullscreen-mobile.png';
+
+该教程为交互式教程, 可以通过以下方式打开控件(`Control`), 修改参数,
+预览效果。点击`HTML`可以看到源代码
+<Image src={fullscreenPCImg} alt="电脑端点击右上角叉打开控制台" />
+<Image src={fullscreenMobileImg} alt="手机端点击右下角按钮打开控制台" />
 
 # JavaScript基础
 
@@ -13,8 +29,9 @@ import * as JSStories from './JS.stories';
 
 JavaScript中的变量可以用来存储各种类型的数据。让我们来看看基本的数据类型：
 
-<Canvas of={JSStories.Variables} />
-<Controls of={JSStories.Variables} />
+<Story
+  path="/story/前端入门交互式教程-javascript基础-基础语法--variables"
+/>
 
 主要的数据类型包括：
 - 字符串（String）：文本数据
@@ -106,8 +123,9 @@ Window对象是浏览器窗口的全局对象，它代表浏览器窗口，是Ja
 
 函数是JavaScript中的基本构建块，用于封装可重用的代码：
 
-<Canvas of={JSStories.Functions} />
-<Controls of={JSStories.Functions} />
+<Story
+  path="/story/前端入门交互式教程-javascript基础-基础语法--functions"
+/>
 
 函数的基本概念：
 - 函数声明：使用`function`关键字
@@ -159,8 +177,9 @@ DOM（文档对象模型）是JavaScript与网页交互的接口。通过DOM，�
 
 下面是一个完整的交互式示例，展示了如何动态管理元素：
 
-<Canvas of={JSStories.DOM} />
-<Controls of={JSStories.DOM} />
+<Story
+  path="/story/前端入门交互式教程-javascript基础-基础语法--dom"
+/>
 
 示例代码：
 
@@ -274,8 +293,9 @@ clearButton.addEventListener('click', clearElements);
 
 JavaScript可以创建各种动画效果，让网页更加生动有趣：
 
-<Canvas of={JSStories.Animation} />
-<Controls of={JSStories.Animation} />
+<Story
+  path="/story/前端入门交互式教程-javascript基础-基础语法--animation"
+/>
 
 动画实现的关键点：
 1. 使用CSS过渡（transition）实现平滑动画
@@ -299,8 +319,9 @@ JavaScript可以创建各种动画效果，让网页更加生动有趣：
 
 下拉菜单是网页中常见的交互组件。在这个示例中,我们展示了如何将样式和交互逻辑分离：
 
-<Canvas of={JSStories.Dropdown} />
-<Controls of={JSStories.Dropdown} />
+<Story
+  path="/story/前端入门交互式教程-javascript基础-基础语法--dropdown"
+/>
 
 实现下拉菜单的关键点：
 1. CSS负责样式定义
@@ -337,8 +358,9 @@ JavaScript可以创建各种动画效果，让网页更加生动有趣：
 
 标签页是组织内容的常用方式。同样,我们将样式和交互逻辑分离：
 
-<Canvas of={JSStories.Tabs} />
-<Controls of={JSStories.Tabs} />
+<Story
+  path="/story/前端入门交互式教程-javascript基础-基础语法--tabs"
+/>
 
 实现标签页的关键点：
 1. CSS定义样式和状态
@@ -370,11 +392,102 @@ JavaScript可以创建各种动画效果，让网页更加生动有趣：
    };
    ```
 
-### 小贴士
+### 7. 聊天室示例
 
-- 使用CSS类名控制样式,而不是直接操作style属性
-- 使用classList API管理类名
-- 将样式定义集中在CSS中,便于维护和修改
-- JavaScript专注于处理交互逻辑和状态管理
+这个聊天室示例展示了如何使用JavaScript实现一个简单的聊天功能：
 
-记住,好的代码组织应该遵循关注点分离原则。CSS负责样式,JavaScript负责交互,这样可以让代码更容易维护和扩展！ 
+<Story
+  path="/story/前端入门交互式教程-javascript基础-聊天室示例--default"
+/>
+
+## DOM操作
+
+在这个示例中，我们使用了多种DOM操作方法：
+
+1. 创建元素
+```javascript
+const messageElement = document.createElement('div');
+messageElement.className = 'message sent';
+```
+
+2. 设置内容
+```javascript
+messageElement.innerHTML = `
+  <div class="message-content">
+    <div class="message-text">${message}</div>
+    <div class="message-time">${new Date().toLocaleTimeString()}</div>
+  </div>
+`;
+```
+
+3. 添加元素
+```javascript
+messagesContainer.appendChild(messageElement);
+```
+
+## 事件处理
+
+示例中包含了多种事件处理方式：
+
+1. 点击事件
+```javascript
+sendButton.onclick = sendMessage;
+```
+
+2. 键盘事件
+```javascript
+input.onkeypress = (e) => {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
+};
+```
+
+3. 输入事件
+```javascript
+input.oninput = () => {
+  sendButton.disabled = !input.value.trim();
+};
+```
+
+## 定时器
+
+使用setTimeout模拟消息回复：
+```javascript
+setTimeout(() => {
+  // 创建回复消息
+  const replyElement = document.createElement('div');
+  // ... 设置回复内容
+}, 1000);
+```
+
+## 交互功能
+
+1. 发送消息
+- 点击发送按钮
+- 按Enter键发送
+- 空消息验证
+
+2. 自动滚动
+```javascript
+messagesContainer.scrollTop = messagesContainer.scrollHeight;
+```
+
+3. 输入验证
+- 禁用空消息发送
+- 按钮状态更新
+
+## 小贴士
+
+- 使用事件委托处理动态添加的元素
+- 使用防抖/节流优化频繁操作
+- 考虑添加消息发送状态
+- 可以添加表情、图片等富文本功能
+- 考虑添加消息持久化存储
+
+这个示例展示了如何使用JavaScript实现基本的交互功能。通过这个交互式教程，你可以直观地看到JavaScript如何操作DOM、处理事件，以及实现用户交互。
+
+## 相关教程
+
+- [HTML基础教程](/docs/html) - 第一节：学习HTML的基础知识
+- [CSS基础教程](/docs/css) - 第二节：学习CSS的基础知识 

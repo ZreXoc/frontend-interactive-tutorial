@@ -1,0 +1,120 @@
+---
+title: 前端交互式教程-CSS基础
+category: technique
+tags:
+  - frontend
+  - css
+summary: CSS基础, 包括样式与选择器的介绍等
+description: 这篇文章是为了给哈工深同学们做一个讲座而准备的, 一共有三节, 这是第二节, 介绍了CSS的基础知识。
+preview: src/assets/images/HIT-logo.svg
+---
+
+import { Image } from 'astro:assets';
+import Story from './Story.astro';
+import fullscreenPCImg from './fullscreen-pc.png';
+import fullscreenMobileImg from './fullscreen-mobile.png';
+
+该教程为交互式教程, 可以通过以下方式打开控件(`Control`), 修改参数,
+预览效果。点击`HTML`可以看到源代码
+<Image src={fullscreenPCImg} alt="电脑端点击右上角叉打开控制台" />
+<Image src={fullscreenMobileImg} alt="手机端点击右下角按钮打开控制台" />
+
+# CSS基础
+
+## 什么是CSS？
+
+> CSS（Cascading Style Sheets，层叠样式表）是用于设计网页样式的语言。它就像是我们给网页"化妆"的工具，可以控制网页的颜色、布局、字体等外观特征。CSS让我们的网页从简单的文字变成了精美的艺术品。
+
+### 1. 引入CSS的方式
+
+在HTML中，我们有三种方式可以引入CSS样式：
+
+1. 内联样式：直接在HTML元素中使用style属性
+   ```html
+   <p style="color: red; font-size: 16px;">这是红色文字</p>
+   ```
+
+2. 内部样式表：在`<head>`标签中使用`<style>`标签
+   ```html
+   <head>
+     <style>
+       p { color: red; font-size: 16px; }
+     </style>
+   </head>
+   ```
+
+3. 外部样式表：使用`<link>`标签引入外部CSS文件
+   ```html
+   <head>
+     <link rel="stylesheet" href="styles.css">
+   </head>
+   ```
+
+### 2. 基础样式属性
+
+让我们从最基础的样式属性开始学习。这些属性就像是我们的"调色板"和"工具箱"，让我们能够改变元素的外观。
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--basic-styles"
+/>
+
+### 3. 文本样式
+
+文本样式是CSS中最常用的样式之一，它让我们能够精确控制文字的外观。
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--text-styles"
+/>
+
+### 4. CSS选择器
+
+CSS选择器就像是我们的"定位器"，帮助我们找到想要美化的HTML元素。就像在人群中找人一样，我们需要知道这个人的特征（ID、类名、标签名等）。
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--selectors"
+/>
+
+### 5. 伪类选择器
+
+伪类选择器用于定义元素的特殊状态。它们就像是元素的"情绪"，可以让我们根据元素的状态来应用不同的样式。
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--pseudo-classes"
+/>
+
+### 6. 盒模型
+
+CSS盒模型是理解网页布局的基础。每个HTML元素都可以看作是一个盒子，这个盒子由内容区域、内边距、边框和外边距组成。
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--box-model"
+/>
+
+### 7. 布局
+
+CSS提供了强大的布局系统，其中Flexbox和Grid是最现代和灵活的布局方式。
+
+#### Flexbox布局
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--layout"
+/>
+
+#### Grid布局
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--grid"
+/>
+
+### 8. 定位
+
+CSS定位让我们可以精确控制元素在页面中的位置。无论是相对定位还是绝对定位，都能帮助我们实现复杂的页面布局。
+
+<Story
+  path="/story/前端入门交互式教程-css基础-样式与选择器--positioning"
+/>
+
+## 相关教程
+
+- [HTML基础教程](/docs/html) - 第一节：学习HTML的基础知识
+- [JavaScript基础教程](/docs/js) - 第三节：学习JavaScript的基础知识 

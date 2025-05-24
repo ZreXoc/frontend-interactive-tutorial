@@ -43,6 +43,21 @@ export interface MediaProps {
   style?: string;
 }
 
+export interface BlockquoteProps {
+  content: string;
+  cite?: string;
+  className?: string;
+  style?: string;
+}
+
+export interface CodeProps {
+  content: string;
+  isPre?: boolean;
+  language?: string;
+  className?: string;
+  style?: string;
+}
+
 export const createList = ({ type, items, className, style }: ListProps): HTMLElement => {
   const list = document.createElement(type);
   if (className) list.className = className;
@@ -207,6 +222,40 @@ export const createMedia = ({ type, src, alt, width, height, controls, autoplay,
   }
   
   if (className) element.className = className;
+  if (style) element.style.cssText = style;
+
+  return element;
+};
+
+export const createBlockquote = ({ content, cite, className, style }: BlockquoteProps): HTMLElement => {
+  const blockquote = document.createElement('blockquote');
+  blockquote.textContent = content;
+  
+  if (cite) {
+    blockquote.setAttribute('cite', cite);
+  }
+  if (className) blockquote.className = className;
+  if (style) blockquote.style.cssText = style;
+
+  return blockquote;
+};
+
+export const createCode = ({ content, isPre, language, className, style }: CodeProps): HTMLElement => {
+  let element: HTMLElement;
+  
+  if (isPre) {
+    element = document.createElement('pre');
+    const code = document.createElement('code');
+    code.textContent = content;
+    if (language) code.className = `language-${language}`;
+    element.appendChild(code);
+  } else {
+    element = document.createElement('code');
+    element.textContent = content;
+    if (language) element.className = `language-${language}`;
+  }
+  
+  if (className) element.className += ` ${className}`;
   if (style) element.style.cssText = style;
 
   return element;
