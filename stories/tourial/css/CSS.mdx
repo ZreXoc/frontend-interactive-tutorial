@@ -55,10 +55,34 @@ background-color: rgba(240, 240, 240, 0.5);  /* 半透明背景 */
 ```
 
 样式示例：
-<div style="color: #333333; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是深灰色文字</div>
-<div style="color: red; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是红色文字</div>
-<div style="background-color: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是浅灰色背景</div>
-<div style="background-color: rgba(240, 240, 240, 0.5); padding: 10px; margin: 10px 0; border: 1px solid #ccc;">这是半透明背景</div>
+<div style={{
+  color: '#333333',
+  padding: '10px',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>这是深灰色文字</div>
+<div style={{
+  color: 'red',
+  padding: '10px',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>
+  这是红色文字
+</div>
+<div style={{
+  backgroundColor: '#f0f0f0',
+  padding: '10px',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>
+  这是浅灰色背景
+</div>
+<div style={{
+  backgroundColor: 'rgba(240, 240, 240, 0.5)',
+  padding: '10px',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>这是半透明背景</div>
 
 #### 2.2 尺寸相关属性
 
@@ -75,10 +99,31 @@ margin: 20px;  /* 外边距 */
 ```
 
 样式示例：
-<div style="width: 200px; height: 100px; background-color: #e0e0e0; margin: 10px 0; border: 1px solid #ccc;">固定尺寸元素</div>
-<div style="min-width: 100px; max-width: 500px; background-color: #e0e0e0; margin: 10px 0; border: 1px solid #ccc;">最小宽度100px，最大宽度500px</div>
-<div style="padding: 20px; background-color: #e0e0e0; margin: 10px 0; border: 1px solid #ccc;">内边距20px</div>
-<div style="margin: 20px; background-color: #e0e0e0; border: 1px solid #ccc;">外边距20px</div>
+<div style={{
+  width: '200px',
+  height: '100px',
+  backgroundColor: '#e0e0e0',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>固定尺寸元素</div>
+<div style={{
+  minWidth: '100px',
+  maxWidth: '500px',
+  backgroundColor: '#e0e0e0',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>最小宽度100px，最大宽度500px</div>
+<div style={{
+  padding: '20px',
+  backgroundColor: '#e0e0e0',
+  margin: '10px 0',
+  border: '1px solid #ccc'
+}}>内边距20px</div>
+<div style={{
+  margin: '20px',
+  backgroundColor: '#e0e0e0',
+  border: '1px solid #ccc'
+}}>外边距20px</div>
 
 #### 2.3 边框相关属性
 
@@ -92,10 +137,27 @@ border-color: #333;  /* 边框颜色 */
 ```
 
 样式示例：
-<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">实线边框</div>
-<div style="border: 2px dashed #333; padding: 10px; margin: 10px 0;">虚线边框</div>
-<div style="border: 2px dotted #666; padding: 10px; margin: 10px 0;">点线边框</div>
-<div style="border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px 0;">圆角边框</div>
+<div style={{
+  border: '1px solid #ccc',
+  padding: '10px',
+  margin: '10px 0'
+}}>实线边框</div>
+<div style={{
+  border: '2px dashed #333',
+  padding: '10px',
+  margin: '10px 0'
+}}>虚线边框</div>
+<div style={{
+  border: '2px dotted #666',
+  padding: '10px',
+  margin: '10px 0'
+}}>点线边框</div>
+<div style={{
+  border: '1px solid #ccc',
+  borderRadius: '8px',
+  padding: '10px',
+  margin: '10px 0'
+}}>圆角边框</div>
 
 ### 3. 文本样式
 
@@ -118,11 +180,26 @@ line-height: 1.5;  /* 行高 */
 ```
 
 样式示例：
-<div style="font-size: 16px; margin: 10px 0;">正常大小文字</div>
-<div style="font-size: 24px; margin: 10px 0;">大号文字</div>
-<div style="font-weight: bold; margin: 10px 0;">粗体文字</div>
-<div style="font-style: italic; margin: 10px 0;">斜体文字</div>
-<div style="line-height: 2; margin: 10px 0;">行高为2的文字<br/>第二行文字</div>
+<div style={{
+  fontSize: '16px',
+  margin: '10px 0'
+}}>正常大小文字</div>
+<div style={{
+  fontSize: '24px',
+  margin: '10px 0'
+}}>大号文字</div>
+<div style={{
+  fontWeight: 'bold',
+  margin: '10px 0'
+}}>粗体文字</div>
+<div style={{
+  fontStyle: 'italic',
+  margin: '10px 0'
+}}>斜体文字</div>
+<div style={{
+  lineHeight: '2',
+  margin: '10px 0'
+}}>行高为2的文字<br/>第二行文字</div>
 
 #### 3.2 文本装饰属性
 
@@ -135,9 +212,18 @@ text-decoration: none;  /* 无装饰 */
 ```
 
 样式示例：
-<div style="text-decoration: underline; margin: 10px 0;">下划线文字</div>
-<div style="text-decoration: line-through; margin: 10px 0;">删除线文字</div>
-<div style="text-decoration: overline; margin: 10px 0;">上划线文字</div>
+<div style={{
+  textDecoration: 'underline',
+  margin: '10px 0'
+}}>下划线文字</div>
+<div style={{
+  textDecoration: 'line-through',
+  margin: '10px 0'
+}}>删除线文字</div>
+<div style={{
+  textDecoration: 'overline',
+  margin: '10px 0'
+}}>上划线文字</div>
 
 #### 3.3 文本对齐属性
 
@@ -150,10 +236,31 @@ text-align: justify;  /* 两端对齐 */
 ```
 
 样式示例：
-<div style="text-align: left; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">左对齐文本</div>
-<div style="text-align: center; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">居中对齐文本</div>
-<div style="text-align: right; border: 1px solid #ccc; padding: 10px; margin: 10px 0;">右对齐文本</div>
-<div style="text-align: justify; border: 1px solid #ccc; padding: 10px; margin: 10px 0; width: 300px;">两端对齐文本，这是一段较长的文本，用于展示两端对齐的效果。这是一段较长的文本，用于展示两端对齐的效果。</div>
+<div style={{
+  textAlign: 'left',
+  border: '1px solid #ccc',
+  padding: '10px',
+  margin: '10px 0'
+}}>左对齐文本</div>
+<div style={{
+  textAlign: 'center',
+  border: '1px solid #ccc',
+  padding: '10px',
+  margin: '10px 0'
+}}>居中对齐文本</div>
+<div style={{
+  textAlign: 'right',
+  border: '1px solid #ccc',
+  padding: '10px',
+  margin: '10px 0'
+}}>右对齐文本</div>
+<div style={{
+  textAlign: 'justify',
+  border: '1px solid #ccc',
+  padding: '10px',
+  margin: '10px 0',
+  width: '300px'
+}}>两端对齐文本，这是一段较长的文本，用于展示两端对齐的效果。这是一段较长的文本，用于展示两端对齐的效果。</div>
 
 #### 3.4 文本间距属性
 
@@ -165,9 +272,18 @@ text-indent: 20px;  /* 首行缩进 */
 ```
 
 样式示例：
-<div style="letter-spacing: 2px; margin: 10px 0;">字母间距加大的文本</div>
-<div style="word-spacing: 5px; margin: 10px 0;">单词 间距 加大的 文本</div>
-<div style="text-indent: 20px; margin: 10px 0;">这是一段有首行缩进的文本。这是一段有首行缩进的文本。这是一段有首行缩进的文本。</div>
+<div style={{
+  letterSpacing: '2px',
+  margin: '10px 0'
+}}>字母间距加大的文本</div>
+<div style={{
+  wordSpacing: '5px',
+  margin: '10px 0'
+}}>单词 间距 加大的 文本</div>
+<div style={{
+  textIndent: '20px',
+  margin: '10px 0'
+}}>这是一段有首行缩进的文本。这是一段有首行缩进的文本。这是一段有首行缩进的文本。</div>
 
 这些属性可以组合使用，创造出丰富多样的文本样式效果。例如：
 
@@ -187,7 +303,19 @@ text-indent: 20px;  /* 首行缩进 */
 ```
 
 样式示例：
-<div style="color: #333; font-size: 18px; font-weight: bold; text-align: center; line-height: 1.6; letter-spacing: 1px; text-decoration: underline; background-color: #f5f5f5; padding: 15px; border-radius: 4px; margin: 10px 0;">组合样式示例文本</div>
+<div style={{
+  color: '#333',
+  fontSize: '18px',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  lineHeight: '1.6',
+  letterSpacing: '1px',
+  textDecoration: 'underline',
+  backgroundColor: '#f5f5f5',
+  padding: '15px',
+  borderRadius: '4px',
+  margin: '10px 0'
+}}>组合样式示例文本</div>
 
 ### 4. CSS选择器
 
@@ -455,4 +583,6 @@ Grid（网格）是一种二维布局系统，可以同时处理行和列。它�
 - 使用flex布局可以轻松实现复杂的页面布局
 - 定位时要注意父元素的定位方式
 
-记住，CSS就像是一门艺术，需要不断练习和尝试。通过这个交互式教程，你可以直观地看到每个CSS属性的效果，这样学习起来会更容易理解！ 
+记住，CSS就像是一门艺术，需要不断练习和尝试。通过这个交互式教程，你可以直观地看到每个CSS属性的效果，这样学习起来会更容易理解！
+
+
